@@ -18,6 +18,18 @@ class BoxController {
     });
     return res.json(box);
   }
+
+  async list(req, res) {
+    const boxes = await Box.find({}).populate({
+      path: "files",
+      options: {
+        sort: {
+          createdAt: -1
+        }
+      }
+    });
+    return res.json(boxes);
+  }
 }
 
 //new pq ta retornando a instancia da classe para poder acessar as funcoes

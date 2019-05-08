@@ -8,6 +8,7 @@ const BoxController = require("./controller/BoxController");
 const FileController = require("./controller/FileController");
 
 routes.post("/boxes", BoxController.store);
+routes.get("/boxes", BoxController.list);
 routes.post(
   "/boxes/:id/files",
   multer(multerConfig).single("file"),
