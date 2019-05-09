@@ -19,5 +19,4 @@ class FileController {
   }
 }
 
-//new pq ta retornando a instancia da classe para poder acessar as funcoes
 module.exports = new FileController();
